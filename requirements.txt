@@ -1,0 +1,6 @@
+# Core dependencies
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# Optional (only needed for specific scripts)
+numpy>=1.24.0  # For create_ground_truth.py

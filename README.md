@@ -128,6 +128,19 @@ Shortest Section: 50 characters
 
 ## Quick Start
 
+### Try the Example
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Set your OpenAI API key in example.py
+# Then run:
+python example.py
+```
+
+This demonstrates intelligent retrieval for 4 test queries (Bengali + English).
+
 ### Option 1: Intent-Based Retrieval (Recommended)
 
 Use our intelligent retrieval system with 12 intent classes:
@@ -204,6 +217,25 @@ Sections: 1,520 from 15 family law acts
 ## License
 
 [To be determined - Consult regarding derivative works of government legal documents]
+
+---
+
+## Files in This Repository
+
+```
+.
+├── README.md                           # This file
+├── USAGE_GUIDE.md                      # Detailed retrieval system documentation
+├── requirements.txt                    # Python dependencies
+├── example.py                          # Example usage script
+├── data/
+│   ├── family_laws_final.json         # Full dataset (1,520 sections, 3.3 MB)
+│   └── SAMPLE.json                     # Sample data (3 example sections)
+└── scripts/
+    ├── retrieval.py                    # Intent-based retrieval system
+    ├── openai_batch_parser.py          # LLM parser for data enhancement
+    └── create_ground_truth.py          # Validation tools
+```
 
 ---
 
