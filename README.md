@@ -128,7 +128,32 @@ Shortest Section: 50 characters
 
 ## Quick Start
 
-### Load the dataset
+### Option 1: Intent-Based Retrieval (Recommended)
+
+Use our intelligent retrieval system with 12 intent classes:
+
+```python
+from scripts.retrieval import FamilyLawRetriever
+
+# Initialize
+retriever = FamilyLawRetriever(data_file="data/family_laws_final.json")
+
+# User query (Bengali or English)
+query = "আমি ধর্ষিত হয়েছি। আমি কি করতে পারি?"
+
+# Get relevant sections automatically
+results = retriever.deterministic_only(query, top_k=5)
+
+# Returns sections for "rape_sexual_violence" intent:
+# Act 835 §9 (Rape definition), §2 (Definitions), §6 (Investigation)
+```
+
+**See [USAGE_GUIDE.md](USAGE_GUIDE.md) for complete documentation.**
+
+### Option 2: Direct Data Access
+
+Load and query the dataset directly:
+
 ```python
 import json
 
