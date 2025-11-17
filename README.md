@@ -230,7 +230,8 @@ Sections: 1,520 from 15 family law acts
 ├── example.py                          # Example usage script
 ├── data/
 │   ├── family_laws_final.json         # Full dataset (1,520 sections, 3.3 MB)
-│   └── SAMPLE.json                     # Sample data (3 example sections)
+│   ├── SAMPLE.json                     # Sample data (3 example sections)
+│   └── INTENT_MAPPINGS.json            # Deterministic intent → section mappings (12 intents)
 └── scripts/
     ├── retrieval.py                    # Intent-based retrieval system
     ├── openai_batch_parser.py          # LLM parser for data enhancement
