@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# Development
+*.db
+*.db-shm
+*.db-wal
+*.npz
+embeddings_cache.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+api/
+frontend/
+data/family/
