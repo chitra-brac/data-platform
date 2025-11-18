@@ -1,0 +1,185 @@
+{
+  "description": "Deterministic intent-to-section mappings for Bangladesh family law retrieval",
+  "version": "1.0",
+  "note": "All section numbers use Bengali numerals (৩ not 3)",
+  "intents": {
+    "rape_sexual_violence": {
+      "description": "Sexual assault, rape, molestation, unwanted sexual contact",
+      "mandatory_sections": [
+        {
+          "act_id": "835",
+          "section_number": "৯",
+          "note": "Rape law - Women & Children Repression Prevention Act 2000"
+        },
+        {
+          "act_id": "835",
+          "section_number": "২",
+          "note": "Definitions (includes rape definition)"
+        },
+        {
+          "act_id": "835",
+          "section_number": "১২",
+          "note": "Sexual harassment"
+        },
+        {
+          "act_id": "1063",
+          "section_number": "৩",
+          "note": "DV definition (includes sexual abuse)"
+        }
+      ]
+    },
+    "domestic_violence_general": {
+      "description": "Physical violence, emotional abuse (non-sexual)",
+      "mandatory_sections": [
+        {
+          "act_id": "1063",
+          "section_number": "৩",
+          "note": "DV definition"
+        },
+        {
+          "act_id": "1063",
+          "section_number": "১৪",
+          "note": "Protection order"
+        }
+      ]
+    },
+    "dowry": {
+      "description": "Dowry demands, harassment",
+      "mandatory_sections": [
+        {
+          "act_id": "1256",
+          "section_number": "৩",
+          "note": "Dowry prohibition"
+        },
+        {
+          "act_id": "1256",
+          "section_number": "৪",
+          "note": "Punishment"
+        }
+      ]
+    },
+    "child_marriage": {
+      "description": "Underage marriage, forced marriage of minors",
+      "mandatory_sections": [
+        {
+          "act_id": "1207",
+          "section_number": "৩",
+          "note": "Child marriage prevention committee"
+        },
+        {
+          "act_id": "1207",
+          "section_number": "৪",
+          "note": "Government officials' duties to prevent child marriage"
+        }
+      ]
+    },
+    "custody": {
+      "description": "Child custody, guardianship after divorce",
+      "mandatory_sections": [
+        {
+          "act_id": "1444",
+          "section_number": "৫",
+          "note": "Family court jurisdiction (custody matters)"
+        },
+        {
+          "act_id": "1063",
+          "section_number": "১৪",
+          "note": "DV protection order (can include custody)"
+        }
+      ]
+    },
+    "maintenance": {
+      "description": "Financial support, alimony, child support",
+      "mandatory_sections": [
+        {
+          "act_id": "1063",
+          "section_number": "১৪",
+          "note": "DV protection order maintenance"
+        },
+        {
+          "act_id": "305",
+          "section_number": "৯",
+          "note": "Muslim maintenance"
+        }
+      ]
+    },
+    "divorce_talaq": {
+      "description": "Divorce, talaq, separation, ending marriage",
+      "mandatory_sections": [
+        {
+          "act_id": "305",
+          "section_number": "৭",
+          "note": "Muslim divorce/talaq procedure"
+        },
+        {
+          "act_id": "180",
+          "section_number": "২",
+          "note": "Dissolution of Muslim marriages"
+        }
+      ]
+    },
+    "polygamy_second_marriage": {
+      "description": "Second wife, multiple marriages",
+      "mandatory_sections": [
+        {
+          "act_id": "305",
+          "section_number": "৬",
+          "note": "Permission required for polygamy"
+        }
+      ]
+    },
+    "inheritance_succession": {
+      "description": "Property inheritance rights after death",
+      "mandatory_sections": [
+        {
+          "act_id": "305",
+          "section_number": "৪",
+          "note": "Muslim succession rules"
+        }
+      ]
+    },
+    "marriage_registration": {
+      "description": "Registering a marriage officially",
+      "mandatory_sections": [
+        {
+          "act_id": "476",
+          "section_number": "৩",
+          "note": "Muslim marriage registration"
+        },
+        {
+          "act_id": "1105",
+          "section_number": "৩",
+          "note": "Hindu marriage registration"
+        }
+      ]
+    },
+    "dower_mehr": {
+      "description": "Dower/mehr payment obligations",
+      "mandatory_sections": [
+        {
+          "act_id": "305",
+          "section_number": "১০",
+          "note": "Dower/mehr provisions"
+        }
+      ]
+    },
+    "parent_maintenance": {
+      "description": "Children's duty to care for elderly parents",
+      "mandatory_sections": [
+        {
+          "act_id": "1132",
+          "section_number": "৩",
+          "note": "Children's duty to maintain parents"
+        }
+      ]
+    }
+  },
+  "stats": {
+    "total_intents": 12,
+    "total_mappings": 22,
+    "avg_sections_per_intent": 1.83,
+    "min_sections": 1,
+    "max_sections": 4
+  },
+  "methodology": "Manually curated by legal experts based on user query analysis and section relevance"
+}

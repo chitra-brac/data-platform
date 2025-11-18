@@ -1,0 +1,56 @@
+{
+  "total_sections": 798,
+  "total_acts": 10,
+  "acts": [
+    {
+      "act_id": "64",
+      "title": "The Guardians and Wards Act, 1890",
+      "sections": 55
+    },
+    {
+      "act_id": "1207",
+      "title": "বাল্যবিবাহ নিরোধ আইন, ২০১৭",
+      "sections": 22
+    },
+    {
+      "act_id": "476",
+      "title": "The Muslim Marriages and Divorces (Registration) Act, 1974",
+      "sections": 18
+    },
+    {
+      "act_id": "1256",
+      "title": "যৌতুক নিরোধ আইন, ২০১৮",
+      "sections": 11
+    },
+    {
+      "act_id": "180",
+      "title": "The Dissolution of Muslim Marriages Act, 1939",
+      "sections": 5
+    },
+    {
+      "act_id": "1063",
+      "title": "পারিবারিক সহিংসতা (প্রতিরোধ ও সুরক্ষা) আইন, ২০১০",
+      "sections": 37
+    },
+    {
+      "act_id": "835",
+      "title": "নারী ও শিশু নির্যাতন দমন আইন, ২০০০",
+      "sections": 43
+    },
+    {
+      "act_id": "11",
+      "title": "1The Penal Code, 1860",
+      "sections": 583
+    },
+    {
+      "act_id": "305",
+      "title": "The Muslim Family Laws Ordinance, 1961",
+      "sections": 14
+    },
+    {
+      "act_id": "9",
+      "title": "The Hindu Widow's Re-marriage Act, 1856",
+      "sections": 10
+    }
+  ]
+}

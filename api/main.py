@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # Load data
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "data", "family_laws_final.json")
 INTENT_FILE = os.path.join(BASE_DIR, "data", "INTENT_MAPPINGS.json")
 ACT_SUMMARIES_FILE = os.path.join(BASE_DIR, "data", "act_summaries.json")
