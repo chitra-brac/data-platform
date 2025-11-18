@@ -121,6 +121,15 @@ function App() {
         </div>
       </nav>
 
+      {/* WIP Notice */}
+      <div className="bg-yellow-50 border-b border-yellow-200">
+        <div className="container mx-auto px-4 py-2">
+          <p className="text-xs text-yellow-800">
+            ⚠️ <strong>Test Platform</strong> • This is a work-in-progress data curation tool for internal review
+          </p>
+        </div>
+      </div>
+
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {view === 'dashboard' && <Dashboard stats={stats} apiUrl={API_URL} />}
