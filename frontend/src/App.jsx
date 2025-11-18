@@ -120,7 +120,7 @@ function App() {
               Bangladesh Family Law Dataset • {stats?.total_sections || 0} Sections • {stats?.total_acts || 0} Acts
             </p>
             <p className="text-xs text-gray-400 mt-2">
-              By Chitra (Shojeb & Sajid) • Data from bdlaws.gov.bd
+              By Chitra (Shojeb & Sajid) • Data from bdlaws.minlaw.gov.bd
             </p>
           </div>
         </div>
