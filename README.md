@@ -1,6 +1,6 @@
 # Bangladesh Family Law Dataset
 
-**1,520 law sections** from 15 family law acts with AI-generated summaries and smart retrieval.
+**1,520 law sections** from 61 family law acts with AI-generated summaries and smart retrieval.
 
 ---
 
@@ -132,7 +132,7 @@ for section in rape_sections[:3]:
 
 ## Data Quality
 
-- **Coverage:** 100% semantic summaries, 100% key terms, ~40% amendments, ~35% cross-refs
+- **Coverage:** 100% semantic summaries, 100% key terms, 18% amendments, 22% cross-refs
 - **Languages:** Bengali (original) + English (AI summaries)
 - **Status:** 93% active, 7% repealed/omitted/redacted
 - **Validation:** Manual review of intent mappings, AI summary spot-checks
@@ -143,6 +143,6 @@ for section in rape_sections[:3]:
 
 [TBD - Consult regarding derivative works of government legal documents]
 
-**BRAC Research Team** • https://github.com/chitra-brac/family-law-data
+**By Chitra (Shojeb & Sajid)** • https://github.com/chitra-brac/family-law-data
 
 **See also:** [USAGE_GUIDE.md](USAGE_GUIDE.md) for detailed retrieval system documentation

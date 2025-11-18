@@ -28,6 +28,10 @@ embeddings_cache.*
 Thumbs.db
 
 # Project-specific
-api/
-frontend/
 data/family/
+
+# API and Frontend - environment files only
+api/.env
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
