@@ -205,7 +205,7 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
             </button>
           ) : (
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-3">
                 <h3 className="text-sm font-semibold text-gray-900">Select Intent Category</h3>
                 <button
                   onClick={() => setShowIntents(false)}
@@ -213,6 +213,9 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
                 >
                   ✕
                 </button>
+              </div>
+              <div className="text-xs text-orange-600 mb-4 bg-orange-50 p-2 rounded border border-orange-200">
+                ⚠️ Note: This creates a suggestion. Manual update to INTENT_MAPPINGS.json required.
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-96 overflow-y-auto">
                 {intents.map((intent) => (
@@ -266,6 +269,9 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
                 </div>
               ) : (
                 <form onSubmit={handleFeedbackSubmit} className="space-y-4">
+                  <div className="text-xs text-orange-600 mb-3 bg-orange-50 p-2 rounded border border-orange-200">
+                    ⚠️ Note: Feedback is saved but changes won't appear immediately. Manual review required.
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
                       type="text"
