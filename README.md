@@ -139,6 +139,15 @@ for section in rape_sections[:3]:
 
 ---
 
+## TODO
+
+- [ ] Generate act-level summaries
+- [ ] Admin authentication for data management
+- [ ] Fabricated procedural data
+- [ ] Real case documents
+
+---
+
 ## License
 
 [TBD - Consult regarding derivative works of government legal documents]
