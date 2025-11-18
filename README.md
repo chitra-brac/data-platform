@@ -1,6 +1,6 @@
 # Bangladesh Family Law Dataset
 
-**1,520 law sections** from 61 family law acts with AI-generated summaries and smart retrieval.
+**1,512 law sections** from 58 family law acts with AI-generated summaries and smart retrieval.
 
 ---
 
@@ -31,7 +31,7 @@ rape/sexual violence • domestic violence • dowry • child marriage • cust
 
 ## Data Structure
 
-Each of 1,520 sections contains:
+Each of 1,512 sections contains:
 
 ```json
 {
@@ -113,9 +113,20 @@ for section in rape_sections[:3]:
 ```
 .
 ├── data/
-│   ├── family_laws_final.json      # Main dataset (1,520 sections, 3.3 MB)
-│   ├── INTENT_MAPPINGS.json        # Intent → section mappings
-│   └── SAMPLE.json                 # 3 example sections
+│   ├── family_laws_final.json      # Main dataset (1,512 sections, 3.3 MB)
+│   ├── INTENT_MAPPINGS.json        # Intent → section mappings (12 categories)
+│   ├── SAMPLE.json                 # 3 example sections
+│   └── feedback.json               # User feedback (created on first submission)
+│
+├── api/
+│   └── main.py                     # FastAPI backend (port 8000)
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx                 # Main navigation
+│   │   └── components/             # React components
+│   ├── package.json                # Node dependencies
+│   └── vite.config.js              # Dev server on port 3001
 │
 ├── scripts/
 │   ├── retrieval.py                # Intent-based retrieval system
@@ -123,10 +134,50 @@ for section in rape_sections[:3]:
 │   └── create_ground_truth.py      # Validation tools
 │
 ├── example.py                      # Working demo
-├── requirements.txt                # Dependencies (openai, python-dotenv, numpy)
-├── README.md                       # This file
-└── USAGE_GUIDE.md                  # Detailed documentation
+├── requirements.txt                # Python dependencies
+└── README.md                       # This file
 ```
+
+---
+
+## Web Platform
+
+Interactive data platform for browsing, verifying, and curating the dataset.
+
+**Running the platform:**
+```bash
+# Terminal 1 - API
+cd api
+pip install fastapi uvicorn
+python main.py  # Runs on http://localhost:8000
+
+# Terminal 2 - Frontend
+cd frontend
+npm install
+npm run dev  # Runs on http://localhost:3001
+```
+
+**Architecture:**
+- **Backend:** FastAPI serving data from `data/family_laws_final.json` and `data/INTENT_MAPPINGS.json`
+- **Frontend:** React 18 + Tailwind CSS, minimal content-first design
+- **Navigation:** Dashboard → Acts → Sections → Detail with prev/next browsing
+- **Feedback:** User suggestions saved to `data/feedback.json` (manual review required)
+
+**Key files:**
+- `api/main.py` - REST API with endpoints for stats, sections, acts, intents, feedback
+- `frontend/src/App.jsx` - Main navigation and state management
+- `frontend/src/components/Browser.jsx` - Acts and sections list view
+- `frontend/src/components/Dashboard.jsx` - Stats and intent categories overview
+- `frontend/src/components/SectionDetail.jsx` - Full section view with navigation
+- `frontend/src/components/IntentBrowser.jsx` - Intent category section listings
+
+**Design philosophy:**
+- Content-first, minimal chrome
+- Metadata shown subtly "in passing" (corners, small gray text)
+- No marketing copy, just data
+- Feedback collection for crowdsourced improvements (doesn't auto-update data)
+
+**Note:** Intent category suggestions via "Add to intent" require manual update to `INTENT_MAPPINGS.json`. Feedback is append-only to `feedback.json`.
 
 ---
 
