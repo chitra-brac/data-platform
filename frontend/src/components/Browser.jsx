@@ -136,7 +136,12 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
           </span>
           <span className="text-sm text-gray-600">{sections.length} sections</span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">{selectedAct.title}</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-3">{selectedAct.title}</h2>
+        {selectedAct.summary && (
+          <p className="text-sm text-gray-600 leading-relaxed mb-6">
+            {selectedAct.summary}
+          </p>
+        )}
 
         <div>
           <input
