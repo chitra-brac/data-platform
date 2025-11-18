@@ -155,12 +155,21 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
               <span className="text-sm font-mono font-semibold text-gray-900">
                 {section.section_number}
               </span>
-              <h3 className="text-base font-semibold text-gray-900">
+              <h3 className="text-base font-semibold text-gray-900 flex-1">
                 {section.section_title}
               </h3>
-              {section.status !== 'active' && (
-                <span className="text-xs text-red-600">{section.status}</span>
-              )}
+              <div className="flex items-center gap-3 text-xs text-gray-400">
+                {section.status !== 'active' && (
+                  <span className="text-red-500">{section.status}</span>
+                )}
+                {section.amendments?.length > 0 && (
+                  <span>{section.amendments.length} amnd</span>
+                )}
+                {section.external_references?.length > 0 && (
+                  <span>{section.external_references.length} ref</span>
+                )}
+                <span>{section.word_count}w</span>
+              </div>
             </div>
 
             <p className="text-sm text-gray-600 line-clamp-2 ml-12">

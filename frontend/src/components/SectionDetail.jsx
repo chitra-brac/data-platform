@@ -101,16 +101,27 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
 
       <div className="bg-white rounded-lg shadow p-8 max-w-4xl mx-auto">
         {/* Header - minimal metadata */}
-        <div className="flex items-center gap-3 text-sm text-gray-500 mb-6">
-          <span>{section.year}</span>
-          <span>•</span>
-          <span>Act {section.act_id}</span>
-          {section.status !== 'active' && (
-            <>
-              <span>•</span>
-              <span className="text-red-600">{section.status}</span>
-            </>
-          )}
+        <div className="flex items-center justify-between text-xs text-gray-400 mb-6">
+          <div className="flex items-center gap-3">
+            <span>{section.year}</span>
+            <span>•</span>
+            <span>Act {section.act_id}</span>
+            {section.status !== 'active' && (
+              <>
+                <span>•</span>
+                <span className="text-red-500">{section.status}</span>
+              </>
+            )}
+          </div>
+          <div className="flex items-center gap-3">
+            <span>{section.word_count}w</span>
+            {section.amendments?.length > 0 && (
+              <span>{section.amendments.length} amnd</span>
+            )}
+            {section.external_references?.length > 0 && (
+              <span>{section.external_references.length} ref</span>
+            )}
+          </div>
         </div>
 
         {/* Title */}
