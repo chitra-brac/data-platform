@@ -12,6 +12,7 @@ function App() {
   const [selectedSection, setSelectedSection] = useState(null)
   const [selectedIntent, setSelectedIntent] = useState(null)
   const [stats, setStats] = useState(null)
+  const [actSections, setActSections] = useState([])
 
   useEffect(() => {
     // Load stats on mount
@@ -34,6 +35,16 @@ function App() {
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
+
+  // Load sections for navigation when viewing a section detail
+  useEffect(() => {
+    if (selectedSection && selectedSection.act_id) {
+      fetch(`${API_URL}/sections?act_id=${selectedSection.act_id}`)
+        .then(res => res.json())
+        .then(data => setActSections(data.sections || []))
+        .catch(err => console.error('Failed to load act sections:', err))
+    }
+  }, [selectedSection])
 
   const handleActClick = (act) => {
     setSelectedAct(act)
@@ -60,6 +71,13 @@ function App() {
     setView('dashboard')
     window.location.hash = ''
   }
+
+  // Calculate prev/next sections for navigation
+  const currentIndex = actSections.findIndex(
+    s => s.act_id === selectedSection?.act_id && s.section_number === selectedSection?.section_number
+  )
+  const prevSection = currentIndex > 0 ? actSections[currentIndex - 1] : null
+  const nextSection = currentIndex >= 0 && currentIndex < actSections.length - 1 ? actSections[currentIndex + 1] : null
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -109,7 +127,15 @@ function App() {
         {view === 'browse' && <Browser apiUrl={API_URL} onActClick={handleActClick} />}
         {view === 'sections' && <Browser apiUrl={API_URL} selectedAct={selectedAct} onSectionClick={handleSectionClick} onBack={handleBackToActs} />}
         {view === 'intent' && <IntentBrowser apiUrl={API_URL} intentName={selectedIntent} onSectionClick={handleSectionClick} onBack={handleBackToDashboard} />}
-        {view === 'detail' && <SectionDetail section={selectedSection} onBack={handleBackToSections} apiUrl={API_URL} />}
+        {view === 'detail' && <SectionDetail
+          section={selectedSection}
+          onBack={handleBackToSections}
+          apiUrl={API_URL}
+          prevSection={prevSection}
+          nextSection={nextSection}
+          onNavigate={handleSectionClick}
+          act={selectedAct}
+        />}
       </main>
 
       {/* Footer */}

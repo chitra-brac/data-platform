@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function SectionDetail({ section, onBack, apiUrl = 'http://localhost:8000' }) {
+export default function SectionDetail({ section, onBack, apiUrl = 'http://localhost:8000', prevSection, nextSection, onNavigate, act }) {
   const [showFeedback, setShowFeedback] = useState(false)
   const [showIntents, setShowIntents] = useState(false)
   const [intents, setIntents] = useState([])
@@ -56,12 +56,48 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
 
   return (
     <div className="space-y-6">
-      <button
-        onClick={onBack}
-        className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
-      >
-        ← Back to Sections
-      </button>
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 text-sm text-gray-600">
+        <button
+          onClick={onBack}
+          className="hover:text-blue-600 transition"
+        >
+          {section.act_title}
+        </button>
+        <span>/</span>
+        <span className="text-gray-900 font-medium">Section {section.section_number}</span>
+      </div>
+
+      {/* Section Navigation */}
+      {(prevSection || nextSection) && (
+        <div className="flex justify-between items-center bg-white rounded-lg shadow px-4 py-3">
+          <button
+            onClick={() => prevSection && onNavigate(prevSection)}
+            disabled={!prevSection}
+            className={`flex items-center gap-2 text-sm font-medium ${
+              prevSection
+                ? 'text-blue-600 hover:text-blue-800'
+                : 'text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            <span>←</span>
+            <span>{prevSection ? `Section ${prevSection.section_number}` : 'No previous'}</span>
+          </button>
+          <div className="text-xs text-gray-500">Navigate sections</div>
+          <button
+            onClick={() => nextSection && onNavigate(nextSection)}
+            disabled={!nextSection}
+            className={`flex items-center gap-2 text-sm font-medium ${
+              nextSection
+                ? 'text-blue-600 hover:text-blue-800'
+                : 'text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            <span>{nextSection ? `Section ${nextSection.section_number}` : 'No next'}</span>
+            <span>→</span>
+          </button>
+        </div>
+      )}
 
       <div className="bg-white rounded-lg shadow-lg p-8">
         {/* Header */}
