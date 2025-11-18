@@ -162,6 +162,32 @@ def get_intents():
     }
 
 
+@app.get("/intent-sections/{intent_name}")
+def get_intent_sections(intent_name: str):
+    """Get all sections for a specific intent category"""
+    if intent_name not in intents:
+        raise HTTPException(404, "Intent category not found")
+
+    intent_info = intents[intent_name]
+    mandatory = intent_info.get('mandatory_sections', [])
+
+    # Get full section data for each mapped section
+    result_sections = []
+    for mapping in mandatory:
+        act_id = mapping['act_id']
+        section_num = mapping['section_number']
+
+        section = next((s for s in sections
+                       if s['act_id'] == act_id and s['section_number'] == section_num), None)
+        if section:
+            result_sections.append(section)
+
+    return {
+        "intent": intent_name,
+        "sections": result_sections
+    }
+
+
 @app.post("/feedback")
 def submit_feedback(feedback: Feedback):
     """Save feedback from users"""

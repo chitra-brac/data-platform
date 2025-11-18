@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Dashboard from './components/Dashboard'
 import Browser from './components/Browser'
 import SectionDetail from './components/SectionDetail'
+import IntentBrowser from './components/IntentBrowser'
 
 const API_URL = 'http://localhost:8000'
 
@@ -9,6 +10,7 @@ function App() {
   const [view, setView] = useState('dashboard')
   const [selectedAct, setSelectedAct] = useState(null)
   const [selectedSection, setSelectedSection] = useState(null)
+  const [selectedIntent, setSelectedIntent] = useState(null)
   const [stats, setStats] = useState(null)
 
   useEffect(() => {
@@ -17,6 +19,20 @@ function App() {
       .then(res => res.json())
       .then(setStats)
       .catch(err => console.error('Failed to load stats:', err))
+
+    // Check for intent hash in URL
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      if (hash.startsWith('#intent-')) {
+        const intentName = hash.replace('#intent-', '')
+        setSelectedIntent(intentName)
+        setView('intent')
+      }
+    }
+
+    handleHashChange()
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
   const handleActClick = (act) => {
@@ -37,6 +53,12 @@ function App() {
   const handleBackToSections = () => {
     setSelectedSection(null)
     setView('sections')
+  }
+
+  const handleBackToDashboard = () => {
+    setSelectedIntent(null)
+    setView('dashboard')
+    window.location.hash = ''
   }
 
   return (
@@ -86,6 +108,7 @@ function App() {
         {view === 'dashboard' && <Dashboard stats={stats} apiUrl={API_URL} />}
         {view === 'browse' && <Browser apiUrl={API_URL} onActClick={handleActClick} />}
         {view === 'sections' && <Browser apiUrl={API_URL} selectedAct={selectedAct} onSectionClick={handleSectionClick} onBack={handleBackToActs} />}
+        {view === 'intent' && <IntentBrowser apiUrl={API_URL} intentName={selectedIntent} onSectionClick={handleSectionClick} onBack={handleBackToDashboard} />}
         {view === 'detail' && <SectionDetail section={selectedSection} onBack={handleBackToSections} apiUrl={API_URL} />}
       </main>
 

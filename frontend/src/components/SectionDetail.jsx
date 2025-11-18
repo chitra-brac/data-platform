@@ -1,10 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function SectionDetail({ section, onBack, apiUrl = 'http://localhost:8000' }) {
   const [showFeedback, setShowFeedback] = useState(false)
+  const [showIntents, setShowIntents] = useState(false)
+  const [intents, setIntents] = useState([])
   const [feedback, setFeedback] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => {
+    // Load intents
+    fetch(`${apiUrl}/intents`)
+      .then(res => res.json())
+      .then(data => setIntents(data.intents))
+      .catch(err => console.error(err))
+  }, [apiUrl])
 
   if (!section) {
     return (
@@ -192,6 +202,52 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
               <div className="text-lg font-bold text-gray-900">{section.external_references?.length || 0}</div>
             </div>
           </div>
+        </div>
+
+        {/* Add to Intent Category */}
+        <div className="border-t pt-6 mb-6">
+          {!showIntents ? (
+            <button
+              onClick={() => setShowIntents(true)}
+              className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg hover:from-purple-700 hover:to-purple-800 font-medium transition"
+            >
+              🏷️ Add this section to an intent category
+            </button>
+          ) : (
+            <div className="bg-purple-50 p-6 rounded-lg">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-900">Add to Intent Category</h3>
+                <button
+                  onClick={() => setShowIntents(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  ✕
+                </button>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Think this section is relevant for a specific legal topic? Add it to that category.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-96 overflow-y-auto">
+                {intents.map((intent) => (
+                  <button
+                    key={intent.name}
+                    onClick={() => {
+                      setFeedback({
+                        ...feedback,
+                        message: `Suggest adding this section to intent category: "${intent.display}"\n\nReason: `
+                      })
+                      setShowIntents(false)
+                      setShowFeedback(true)
+                    }}
+                    className="p-3 border-2 border-purple-200 rounded-lg hover:border-purple-500 hover:bg-purple-100 transition text-left"
+                  >
+                    <div className="font-medium text-sm text-gray-900">{intent.display}</div>
+                    <div className="text-xs text-gray-500 mt-1">{intent.count} sections</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Feedback Section */}
