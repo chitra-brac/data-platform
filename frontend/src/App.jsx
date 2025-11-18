@@ -4,7 +4,7 @@ import Browser from './components/Browser'
 import SectionDetail from './components/SectionDetail'
 import IntentBrowser from './components/IntentBrowser'
 
-const API_URL = 'http://localhost:8000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 function App() {
   const [view, setView] = useState('dashboard')
