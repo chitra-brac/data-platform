@@ -44304,6 +44304,97 @@
     "references_source": "regex"
   },
   {
+    "act_id": "1505",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪",
+    "year": "২০২৪",
+    "section_number": "১",
+    "section_title": "সংক্ষিপ্ত শিরোনাম ও প্রবর্তন",
+    "section_text": "১।   (১) এই অধ্যাদেশ জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪ নামে অভিহিত হইবে। (২) ইহা অবিলম্বে কার্যকর হইবে",
+    "status": "active",
+    "paragraphs": [
+      {
+        "index": 1,
+        "text": "১।   (১) এই অধ্যাদেশ জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪ নামে অভিহিত হইবে।",
+        "length": 102
+      },
+      {
+        "index": 2,
+        "text": "(২) ইহা অবিলম্বে কার্যকর হইবে",
+        "length": 29
+      }
+    ],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "1505",
+        "link_text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪",
+        "href": "/act-1505.html",
+        "context": "১।   (১) এই অধ্যাদেশ জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪ নামে অভিহিত হইবে।"
+      }
+    ],
+    "links": [
+      {
+        "text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪",
+        "href": "/act-1505.html",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪"
+      }
+    ],
+    "word_count": 19,
+    "char_count": 132,
+    "semantic_summary": "This section names the ordinance as the 'Ordinance for the Security of the Family Members of the Father of the Nation, 2024' and states that it will come into effect immediately.",
+    "key_terms": [
+      "ordinance",
+      "security",
+      "family members"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
+    "act_id": "1505",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) অধ্যাদেশ, ২০২৪",
+    "year": "২০২৪",
+    "section_number": "২",
+    "section_title": "২০০৯ সনের ৬৩ নং আইন এর রহিতকরণ",
+    "section_text": "২। জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯ (২০০৯ সনের ৬৩ নং আইন) এতদ্দ্বারা রহিত করা হইল।",
+    "status": "repealed",
+    "paragraphs": [
+      {
+        "index": 1,
+        "text": "২। জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯ (২০০৯ সনের ৬৩ নং আইন) এতদ্দ্বারা রহিত করা হইল।",
+        "length": 98
+      }
+    ],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "1028",
+        "link_text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "href": "/act-1028.html",
+        "context": "২।  জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯ (২০০৯ সনের ৬৩ নং আইন) এতদ্দ্বারা রহিত করা হইল।"
+      }
+    ],
+    "links": [
+      {
+        "text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "href": "/act-1028.html",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯"
+      }
+    ],
+    "word_count": 16,
+    "char_count": 98,
+    "semantic_summary": "This section repeals the National Father Family Members Security Act, 2009 (Act No. 63 of 2009).",
+    "key_terms": [
+      "জাতির পিতা",
+      "নিরাপত্তা আইন",
+      "রহিত"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
     "act_id": "1444",
     "act_title": "পারিবারিক আদালত আইন, ২০২৩",
     "year": "২০২৩",
@@ -48460,6 +48551,134 @@
     "references_source": "regex"
   },
   {
+    "act_id": "1028",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+    "year": "২০০৯",
+    "section_number": "১",
+    "section_title": "সংক্ষিপ্ত শিরোনাম ও প্রবর্তন",
+    "section_text": "১। (১) এই আইন জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯ নামে অভিহিত হইবে। (২) ইহা অবিলম্বে কার্যকর হইবে।",
+    "status": "active",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "1028",
+        "link_text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "href": "/act-1028.html",
+        "context": "\n\n                    \n                    ১। (১) এই আইন জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯ নামে অভিহিত হইবে।      (২) ইহা অবিলম্বে কার্যকর হইবে। \n\n                    \n                    \n\n"
+      }
+    ],
+    "links": [
+      {
+        "text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+        "href": "/act-1028.html",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯"
+      }
+    ],
+    "word_count": 18,
+    "char_count": 111,
+    "semantic_summary": "This section names the law as the 'Law for the Protection of the Family Members of the Father of the Nation, 2009' and states that it will come into effect immediately.",
+    "key_terms": [
+      "নিরাপত্তা আইন",
+      "জাতির পিতা",
+      "পরিবার-সদস্যগণ"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
+    "act_id": "1028",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+    "year": "২০০৯",
+    "section_number": "২",
+    "section_title": "সংজ্ঞা",
+    "section_text": "২। বিষয় বা প্রসঙ্গের পরিপন্থী কিছু না থাকিলে, এই আইনে- (১) \"জাতির পিতা\" অর্থ The Proclamation of Independence বা স্বাধীনতার ঘোষণাপত্রে উল্লিখিত বাংলাদেশের অবিসংবাদিত নেতা বঙ্গবন্ধু শেখ মুজিবুর রহমান যিনি বাঙ্গালী জাতির স্বাধীনতার রূপকার, বাংলাদেশের স্থপতি এবং সংবিধান (চতুর্থ সংশোধন) আইন, ১৯৭৫ (১৯৭৫ সনের ২নং আইন) এর ধারা ৩৪ এর দফা (খ) দ্বারা সাংবিধানিকভাবে জাতির পিতা হিসাবে স্বীকৃত; (২) \"পরিবার-সদস্য\" অর্থ জাতির পিতার জীবিত দুই কন্যা এবং তাঁহাদের সন্তানাদি।",
+    "status": "active",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "2",
+        "referenced_sections": [
+          "34"
+        ],
+        "context": "The section refers to the constitutional recognition of the Father of the Nation as per the Fourth Amendment Act, 1975."
+      }
+    ],
+    "links": [],
+    "word_count": 69,
+    "char_count": 460,
+    "semantic_summary": "This section provides definitions for key terms used in the law, specifically defining 'Father of the Nation' and 'family member' in the context of Bangladesh's history.",
+    "key_terms": [
+      "জাতির পিতা",
+      "পরিবার-সদস্য",
+      "স্বাধীনতার ঘোষণাপত্র",
+      "বাংলাদেশের স্থপতি"
+    ],
+    "amendments_source": "regex",
+    "references_source": "llm"
+  },
+  {
+    "act_id": "1028",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+    "year": "২০০৯",
+    "section_number": "৩",
+    "section_title": "আইনের প্রাধান্য",
+    "section_text": "৩। আপাততঃ বলবৎ অন্য কোন আইনে যাহা কিছুই থাকুক না কেন, এই আইনের বিধানাবলী কার্যকর হইবে।",
+    "status": "active",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [],
+    "links": [],
+    "word_count": 16,
+    "char_count": 86,
+    "semantic_summary": "This section establishes that the provisions of this law will be effective regardless of any other laws that may exist.",
+    "key_terms": [
+      "law",
+      "provisions",
+      "effective"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
+    "act_id": "1028",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০৯",
+    "year": "২০০৯",
+    "section_number": "৪",
+    "section_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা সম্পর্কিত বিধান",
+    "section_text": "৪। (১) Special Security Force Ordinance, 1986 (Ordinance No. XLIII of 1986) এর অধীন Very Important Person এর জন্য যেরূপ নিরাপত্তার ব্যবস্থা আছে সেইরূপ নিরাপত্তা সরকার জাতির পিতার পরিবার-সদস্যগণকে আজীবন সর্বস্থানে প্রদান করিবে। ২) উপ-ধারা (১) এ উল্লিখিত নিরাপত্তা প্রদানের ক্ষেত্রে সরকার পরিবার-সদস্যগণের মতামতকে প্রাধান্য দিবে। (৩) জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা বিধানের লক্ষ্যে সরকার- (ক) তৎকর্তৃক নির্ধারিত শর্তে উক্ত পরিবার-সদস্যগণের প্রত্যেকের জন্য নিরাপদ ও সুরক্ষিত আবাসনের ব্যবস্থা গ্রহণ করিবে; এবং (খ) উহার বিবেচনায় প্রয়োজনীয় অন্যান্য সুবিধাদিও তাঁহাদিগকে প্রদান করিবে।",
+    "status": "active",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "XLIII",
+        "referenced_sections": [],
+        "context": "Special Security Force Ordinance, 1986 (Ordinance No. XLIII of 1986) এর অধীন Very Important Person এর জন্য যেরূপ নিরাপত্তার ব্যবস্থা আছে"
+      }
+    ],
+    "links": [
+      {
+        "text": "Special Security Force Ordinance, 1986",
+        "href": "/act-698.html",
+        "title": "Special Security Force Ordinance, 1986"
+      }
+    ],
+    "word_count": 79,
+    "char_count": 584,
+    "semantic_summary": "This section mandates the government to provide lifelong security to the family members of the Father of the Nation, prioritizing their opinions in the security arrangements and ensuring safe housing and other necessary facilities.",
+    "key_terms": [
+      "Special Security Force",
+      "Very Important Person",
+      "security",
+      "family members"
+    ],
+    "amendments_source": "regex",
+    "references_source": "llm"
+  },
+  {
     "act_id": "25",
     "act_title": "1The Special Marriage Act, 1872",
     "year": "1872",
@@ -50573,6 +50792,66 @@
       "caste",
       "sub-caste",
       "Hinduism"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
+    "act_id": "881",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১",
+    "year": "২০০১",
+    "section_number": "১",
+    "section_title": "সংক্ষিপ্ত শিরোনামা",
+    "section_text": "১৷ এই আইন জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১ নামে অভিহিত হইবে৷",
+    "status": "active",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [
+      {
+        "referenced_act_id": "881",
+        "link_text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১",
+        "href": "/act-881.html",
+        "context": "\n\n                    \n                    \t১৷ এই আইন জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১ নামে অভিহিত হইবে৷\n\n                    \n                    \n\n\n                    \n               "
+      }
+    ],
+    "links": [
+      {
+        "text": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১",
+        "href": "/act-881.html",
+        "title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১"
+      }
+    ],
+    "word_count": 13,
+    "char_count": 86,
+    "semantic_summary": "This section designates the name of the law as the 'Law for the Security of the Family Members of the Father of the Nation, 2001'.",
+    "key_terms": [
+      "নিরাপত্তা",
+      "আইন",
+      "জাতির পিতা"
+    ],
+    "amendments_source": "regex",
+    "references_source": "regex"
+  },
+  {
+    "act_id": "881",
+    "act_title": "জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা (রহিতকরণ) আইন, ২০০১",
+    "year": "২০০১",
+    "section_number": "২",
+    "section_title": "২০০১ সনের ২৯ নং আইন এর রহিতকরণ",
+    "section_text": "২৷  জাতির পিতার পরিবার-সদস্যগণের নিরাপত্তা আইন, ২০০১ (২০০১ সনের ২৯ নং আইন) এতদ্‌দ্বারা রহিত করা হইল৷",
+    "status": "repealed",
+    "paragraphs": [],
+    "amendments": [],
+    "external_references": [],
+    "links": [],
+    "word_count": 16,
+    "char_count": 100,
+    "semantic_summary": "This section repeals the National Father Family Members Security Act, 2001 (Act No. 29 of 2001).",
+    "key_terms": [
+      "জাতির পিতা",
+      "নিরাপত্তা আইন",
+      "রহিত"
     ],
     "amendments_source": "regex",
     "references_source": "regex"
