@@ -25,6 +25,7 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(BASE_DIR, "data", "family_laws_final.json")
 INTENT_FILE = os.path.join(BASE_DIR, "data", "INTENT_MAPPINGS.json")
+ACT_SUMMARIES_FILE = os.path.join(BASE_DIR, "data", "act_summaries.json")
 FEEDBACK_FILE = os.path.join(BASE_DIR, "data", "feedback.json")
 
 with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -33,6 +34,15 @@ with open(DATA_FILE, 'r', encoding='utf-8') as f:
 with open(INTENT_FILE, 'r', encoding='utf-8') as f:
     intent_data = json.load(f)
     intents = intent_data.get('intents', {})
+
+# Load act summaries
+act_summaries_map = {}
+try:
+    with open(ACT_SUMMARIES_FILE, 'r', encoding='utf-8') as f:
+        act_summaries = json.load(f)
+        act_summaries_map = {a['act_id']: a['summary'] for a in act_summaries}
+except FileNotFoundError:
+    pass  # Summaries file doesn't exist yet
 
 
 class Feedback(BaseModel):
@@ -66,7 +76,8 @@ def get_stats():
                 'id': act_id,
                 'title': s['act_title'],
                 'year': s['year'],
-                'count': 0
+                'count': 0,
+                'summary': act_summaries_map.get(act_id)
             }
         acts[act_id]['count'] += 1
 
@@ -90,7 +101,7 @@ def get_stats():
 
 @app.get("/acts")
 def get_acts():
-    """Get list of all acts with section counts"""
+    """Get list of all acts with section counts and summaries"""
     acts = {}
     for s in sections:
         act_id = s['act_id']
@@ -99,7 +110,8 @@ def get_acts():
                 'id': act_id,
                 'title': s['act_title'],
                 'year': s['year'],
-                'count': 0
+                'count': 0,
+                'summary': act_summaries_map.get(act_id)
             }
         acts[act_id]['count'] += 1
     return {"acts": sorted(acts.values(), key=lambda x: -int(x['year']) if x['year'].isdigit() else 0)}

@@ -101,8 +101,13 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {act.title}
                   </h3>
+                  {act.summary && (
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {act.summary}
+                    </p>
+                  )}
                 </div>
-                <div className="ml-4 text-right">
+                <div className="ml-4 text-right flex-shrink-0">
                   <div className="text-3xl font-bold text-blue-600">{act.count || 0}</div>
                   <div className="text-xs text-gray-500">sections</div>
                 </div>
