@@ -144,53 +144,28 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-1">
         {filteredSections.map((section) => (
           <div
             key={`${section.act_id}-${section.section_number}`}
             onClick={() => onSectionClick(section)}
-            className="bg-white rounded-lg shadow hover:shadow-lg transition cursor-pointer p-6 border border-gray-200 hover:border-blue-400"
+            className="bg-white border-l-4 border-transparent hover:border-blue-500 cursor-pointer p-5 hover:bg-gray-50 transition"
           >
-            <div className="flex justify-between items-start mb-3">
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded text-sm font-medium">
-                  Section {section.section_number}
-                </span>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  section.status === 'active' ? 'bg-green-100 text-green-800' :
-                  section.status === 'repealed' ? 'bg-red-100 text-red-800' :
-                  'bg-gray-100 text-gray-800'
-                }`}>
-                  {section.status}
-                </span>
-              </div>
+            <div className="flex items-baseline gap-3 mb-2">
+              <span className="text-sm font-mono font-semibold text-gray-900">
+                {section.section_number}
+              </span>
+              <h3 className="text-base font-semibold text-gray-900">
+                {section.section_title}
+              </h3>
+              {section.status !== 'active' && (
+                <span className="text-xs text-red-600">{section.status}</span>
+              )}
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
-              {section.section_title}
-            </h3>
-
-            <p className="text-gray-700 mb-4 line-clamp-2">
+            <p className="text-sm text-gray-600 line-clamp-2 ml-12">
               {section.semantic_summary}
             </p>
-
-            <div className="flex flex-wrap gap-2 mb-3">
-              {section.key_terms?.slice(0, 4).map((term, idx) => (
-                <span key={idx} className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded">
-                  {term}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex gap-4 text-xs text-gray-500">
-              {section.amendments?.length > 0 && (
-                <span>{section.amendments.length} amendment{section.amendments.length > 1 ? 's' : ''}</span>
-              )}
-              {section.external_references?.length > 0 && (
-                <span>{section.external_references.length} reference{section.external_references.length > 1 ? 's' : ''}</span>
-              )}
-              <span>{section.word_count} words</span>
-            </div>
           </div>
         ))}
       </div>
