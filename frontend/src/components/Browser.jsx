@@ -67,11 +67,10 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
     return (
       <div className="space-y-6">
         <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Acts Catalog</h2>
-          <p className="text-gray-600 mb-6">
-            Dataset contains <strong>{acts.length} acts</strong> covering Bangladesh family law.
-            Browse by year, search by title, or click any act to explore its sections.
-          </p>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">{acts.length} Acts</h2>
+            <div className="text-sm text-gray-600">{acts.reduce((sum, act) => sum + act.count, 0)} sections total</div>
+          </div>
 
           <div className="mb-6">
             <input
@@ -81,10 +80,6 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
               placeholder="Search acts by title or year..."
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
-
-          <div className="text-sm text-gray-600 mb-4">
-            Showing {filteredActs.length} of {acts.length} acts
           </div>
         </div>
 
@@ -130,15 +125,13 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
           ← Back to Acts
         </button>
 
-        <div className="mb-4">
+        <div className="flex items-center gap-3 mb-4">
           <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
             {selectedAct.year}
           </span>
+          <span className="text-sm text-gray-600">{sections.length} sections</span>
         </div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">{selectedAct.title}</h2>
-        <p className="text-gray-600 mb-6">
-          {sections.length} sections in this act
-        </p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">{selectedAct.title}</h2>
 
         <div>
           <input
@@ -149,12 +142,6 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
-        {searchText && (
-          <div className="text-sm text-gray-600 mt-4">
-            Showing {filteredSections.length} of {sections.length} sections
-          </div>
-        )}
       </div>
 
       <div className="space-y-4">
@@ -195,14 +182,14 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
               ))}
             </div>
 
-            <div className="flex gap-4 text-sm text-gray-500">
+            <div className="flex gap-4 text-xs text-gray-500">
               {section.amendments?.length > 0 && (
-                <span>📝 {section.amendments.length} amendment(s)</span>
+                <span>{section.amendments.length} amendment{section.amendments.length > 1 ? 's' : ''}</span>
               )}
               {section.external_references?.length > 0 && (
-                <span>🔗 {section.external_references.length} reference(s)</span>
+                <span>{section.external_references.length} reference{section.external_references.length > 1 ? 's' : ''}</span>
               )}
-              <span>📄 {section.word_count} words</span>
+              <span>{section.word_count} words</span>
             </div>
           </div>
         ))}

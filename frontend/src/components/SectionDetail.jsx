@@ -141,20 +141,12 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-xs text-gray-500 italic">
-              Know of missing amendments? Please share via feedback below.
-            </div>
           </div>
         ) : (
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Amendments</h3>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <p className="text-sm text-gray-600">
-                No amendment data available for this section.
-              </p>
-              <p className="text-xs text-orange-600 mt-2">
-                💡 If you know of amendments to this section, please share via feedback below!
-              </p>
+              <p className="text-sm text-gray-600">No amendment data available</p>
             </div>
           </div>
         )}
@@ -209,24 +201,21 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
           {!showIntents ? (
             <button
               onClick={() => setShowIntents(true)}
-              className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg hover:from-purple-700 hover:to-purple-800 font-medium transition"
+              className="text-sm text-purple-600 hover:text-purple-800 font-medium"
             >
-              🏷️ Add this section to an intent category
+              + Add to intent category
             </button>
           ) : (
-            <div className="bg-purple-50 p-6 rounded-lg">
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">Add to Intent Category</h3>
+                <h3 className="text-sm font-semibold text-gray-900">Select Intent Category</h3>
                 <button
                   onClick={() => setShowIntents(false)}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 text-sm"
                 >
                   ✕
                 </button>
               </div>
-              <p className="text-sm text-gray-600 mb-4">
-                Think this section is relevant for a specific legal topic? Add it to that category.
-              </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-h-96 overflow-y-auto">
                 {intents.map((intent) => (
                   <button
@@ -255,14 +244,14 @@ export default function SectionDetail({ section, onBack, apiUrl = 'http://localh
           {!showFeedback ? (
             <button
               onClick={() => setShowFeedback(true)}
-              className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 font-medium transition"
+              className="text-sm text-blue-600 hover:text-blue-800 font-medium"
             >
-              💬 Have feedback on this section? Click to share
+              + Add feedback
             </button>
           ) : (
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">Share Your Feedback</h3>
+                <h3 className="text-sm font-semibold text-gray-900">Feedback</h3>
                 <button
                   onClick={() => setShowFeedback(false)}
                   className="text-gray-500 hover:text-gray-700"
