@@ -115,6 +115,7 @@ for section in rape_sections[:3]:
 ├── data/
 │   ├── family_laws_final.json      # Main dataset (1,512 sections, 3.3 MB)
 │   ├── INTENT_MAPPINGS.json        # Intent → section mappings (12 categories)
+│   ├── act_summaries.json          # AI-generated summaries for all 58 acts
 │   ├── SAMPLE.json                 # 3 example sections
 │   └── feedback.json               # User feedback (created on first submission)
 │
@@ -192,7 +193,7 @@ npm run dev  # Runs on http://localhost:3001
 
 ## TODO
 
-- [ ] Generate act-level summaries
+- [x] Generate act-level summaries
 - [ ] Admin authentication for data management
 - [ ] Fabricated procedural data
 - [ ] Real case documents
