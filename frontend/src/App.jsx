@@ -66,8 +66,8 @@ function App() {
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold">Bangladesh Family Law Data</h1>
-          <p className="text-blue-100 mt-1">Interactive Data Showcase</p>
+          <h1 className="text-3xl font-bold">Bangladesh Legal Knowledge Base</h1>
+          <p className="text-blue-100 mt-1">AI Training Data Platform • Family Law Dataset</p>
         </div>
       </header>
 
@@ -83,7 +83,7 @@ function App() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
-              Dashboard
+              📊 Data Overview
             </button>
             <button
               onClick={() => {
@@ -97,7 +97,7 @@ function App() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
-              Browse Acts
+              🗂️ Dataset Explorer
             </button>
           </div>
         </div>

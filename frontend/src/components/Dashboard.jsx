@@ -36,8 +36,33 @@ export default function Dashboard({ stats, apiUrl }) {
 
   return (
     <div className="space-y-8">
+      {/* Platform Purpose */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 border border-blue-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-3">About This Platform</h2>
+        <p className="text-gray-700 mb-4">
+          This is the <strong>data platform</strong> for building Bangladesh's legal AI system.
+          We're creating a comprehensive knowledge base starting with family law.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="bg-white rounded p-3 border border-blue-200">
+            <div className="font-semibold text-blue-900 mb-1">🎯 Purpose</div>
+            <div className="text-gray-600">AI training & retrieval system data</div>
+          </div>
+          <div className="bg-white rounded p-3 border border-blue-200">
+            <div className="font-semibold text-blue-900 mb-1">👥 Users</div>
+            <div className="text-gray-600">Research team + legal professionals</div>
+          </div>
+          <div className="bg-white rounded p-3 border border-blue-200">
+            <div className="font-semibold text-blue-900 mb-1">✅ Goal</div>
+            <div className="text-gray-600">Verify, curate, and expand dataset</div>
+          </div>
+        </div>
+      </div>
+
       {/* Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Knowledge Base Status</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white rounded-lg shadow p-6">
           <div className="text-sm font-medium text-gray-600">Total Sections</div>
           <div className="text-3xl font-bold text-blue-600 mt-2">{stats.total_sections}</div>
@@ -63,12 +88,15 @@ export default function Dashboard({ stats, apiUrl }) {
           </div>
         </div>
       </div>
+      </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Data Completeness */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <h3 className="text-lg font-semibold mb-4">Data Completeness</h3>
+      <div>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Data Quality Metrics</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Data Completeness */}
+          <div className="bg-white rounded-lg shadow p-6">
+            <h3 className="text-lg font-semibold mb-4">Coverage by Data Type</h3>
           <div className="space-y-4">
             {completenessData.map((item) => (
               <div key={item.name}>
@@ -86,13 +114,13 @@ export default function Dashboard({ stats, apiUrl }) {
             ))}
           </div>
           <p className="text-xs text-gray-500 mt-4 italic">
-            Use feedback forms to help improve amendment and reference coverage
+            ⚠️ Amendments and references need improvement - legal experts can help verify
           </p>
         </div>
 
         {/* Section Status */}
         <div className="bg-white rounded-lg shadow p-6">
-          <h3 className="text-lg font-semibold mb-4">Section Status</h3>
+          <h3 className="text-lg font-semibold mb-4">Legal Status Distribution</h3>
           <div className="space-y-3">
             {Object.entries(stats.status || {}).map(([status, count]) => (
               <div key={status} className="flex items-center justify-between">
@@ -115,12 +143,17 @@ export default function Dashboard({ stats, apiUrl }) {
             ))}
           </div>
         </div>
+        </div>
       </div>
 
       {/* Intent Categories */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold mb-4">Intent Categories ({intents.length} legal topics)</h3>
-        <p className="text-sm text-gray-600 mb-4">Click any category to see which sections are mapped to it</p>
+      <div>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">AI Intent Mappings</h2>
+        <div className="bg-white rounded-lg shadow p-6">
+          <p className="text-sm text-gray-600 mb-4">
+            These {intents.length} categories power the AI retrieval system. Click to see mapped sections,
+            or use "Add to intent" on any section to suggest improvements.
+          </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {intents.map((intent, idx) => (
             <button
@@ -174,6 +207,23 @@ export default function Dashboard({ stats, apiUrl }) {
             </tbody>
           </table>
         </div>
+      </div>
+      </div>
+
+      {/* Call to Action for Legal Professionals */}
+      <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-6">
+        <h3 className="text-xl font-bold text-orange-900 mb-3">🤝 Legal Professionals: Help Us Improve</h3>
+        <p className="text-gray-700 mb-4">
+          We need your expertise to verify and enhance this dataset:
+        </p>
+        <ul className="space-y-2 text-gray-700 mb-4">
+          <li>• <strong>Missing amendments?</strong> Use feedback forms on any section</li>
+          <li>• <strong>Wrong intent mapping?</strong> Click "Add to intent category" to suggest</li>
+          <li>• <strong>Incorrect summaries?</strong> Let us know via section feedback</li>
+        </ul>
+        <p className="text-sm text-gray-600 italic">
+          Every verification helps build a more accurate AI legal system for Bangladesh
+        </p>
       </div>
     </div>
   )

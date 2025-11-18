@@ -67,9 +67,10 @@ export default function Browser({ apiUrl, selectedAct, onActClick, onSectionClic
     return (
       <div className="space-y-6">
         <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Browse Acts</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Acts Catalog</h2>
           <p className="text-gray-600 mb-6">
-            Explore {acts.length} family law acts from Bangladesh. Click any act to view its sections.
+            Dataset contains <strong>{acts.length} acts</strong> covering Bangladesh family law.
+            Browse by year, search by title, or click any act to explore its sections.
           </p>
 
           <div className="mb-6">
